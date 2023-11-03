@@ -2,6 +2,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TokenProtected from "../assets/components/ProtectedComponents/TokenProtected";
+// import { LoginPage } from "../pages/auth/LoginPage";
 import LoginPage from "../pages/auth/LoginPage";
 import RegisterPage from "../pages/auth/RegisterPage";
 import FixDashboard from "../pages/FixDashboard";

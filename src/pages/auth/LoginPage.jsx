@@ -1,7 +1,8 @@
-import { GoogleLogin } from "@react-oauth/google";
+// import { GoogleLogin } from "@react-oauth/google";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import GoogleLogin from "../../assets/components/GoogleComponents/GoogleLogin";
 import { PostLoginUser } from "../../redux/actions/postLogin";
 
 const LoginPage = () => {
@@ -70,7 +71,7 @@ const LoginPage = () => {
           >
             Login
           </button>
-          <GoogleLogin buttonText="Login with Google" />
+           <GoogleLogin buttonText="Login with Google"/>
         </div>
       </div>
     </div>

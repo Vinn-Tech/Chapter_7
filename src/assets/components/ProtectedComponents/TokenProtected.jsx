@@ -15,6 +15,9 @@ function TokenProtected({ children }) {
         dispatch(setIsUsername(""))
         dispatch(setIsEmail(""))
     }
+    else {
+      navigate('/home')
+    }
   }, [Data.token, navigate, dispatch]);
 
 

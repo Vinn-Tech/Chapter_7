@@ -2,20 +2,20 @@ import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState = {
-    token : undefined,
+    tokenOAuth : undefined,
 }
 
 const authLoginOAuthSlice = createSlice({
     name : "loginOAuth",
     initialState,
     reducers :{
-        setToken : (state, action) => {
+        setTokenOAuth : (state, action) => {
             state.token = action.payload
         },
     }
 
 })
 
-export const {setToken} = authLoginOAuthSlice.actions
+export const {setTokenOAuth} = authLoginOAuthSlice.actions
 
 export default authLoginOAuthSlice.reducer
