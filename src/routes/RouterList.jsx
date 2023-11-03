@@ -1,23 +1,15 @@
-// import { Dashboard } from '@rsuite/icons'
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TokenProtected from "../assets/components/ProtectedComponents/TokenProtected";
-// import { LoginPage } from "../pages/auth/LoginPage";
 import LoginPage from "../pages/auth/LoginPage";
 import RegisterPage from "../pages/auth/RegisterPage";
-import FixDashboard from "../pages/FixDashboard";
 import ReduxAllMovies from "../pages/ReduxAllMovies";
 import ReduxDetailPage from "../pages/ReduxDetailPage";
 import ReduxSearchPage from "../pages/ReduxSearchPage";
-// import DetailMovies from "../pages/DetailMovies";
-// import AllMoviesList from "../pages/AllMoviesList";
-// import ReduxDashboard from "../pages/ReduxDashboard";
-// import QuizRedux from '../pages/reduxHandle/QuizRedux'
-// import ReduxPage from '../pages/reduxHandle/ReduxPage'
-// import Home from '../pages/Home'
-// import SearchMovieList from "../pages/SearchMovieList";
-// import TesDash from '../pages/TesDash'
-// import Testing_Movies from '../pages/Testing_Movies'
+import ReduxDashboard from "../pages/ReduxDashboard";
+import TokenProtectedSearch from "../assets/components/ProtectedComponents/TokenProtectedSearch";
+import TokenProtectedDetail from "../assets/components/ProtectedComponents/TokenProtectedDetail";
+import TokenProtectedAllMovies from "../assets/components/ProtectedComponents/TokenProtectedAllMovies";
 
 const RouterList = () => {
   return (
@@ -29,16 +21,34 @@ const RouterList = () => {
           path="/home"
           element={
             <TokenProtected>
-              <FixDashboard />
+              <ReduxDashboard />
             </TokenProtected>
           }
         />
-        <Route path="/movie-list" element={<ReduxAllMovies />} />
-        <Route path="/search/:title" element={<ReduxSearchPage />} />
-        <Route path="/:id" element={<ReduxDetailPage />} />
-        {/* <Route path="/:id" element={<DetailMovies/>}/>
-            <Route path="/search/:title" element={<SearchMovieList/>}/>
-            <Route path='/movie-list' element={<AllMoviesList/>}/> */}
+        <Route
+          path="/movie-list"
+          element={
+            <TokenProtectedAllMovies>
+              <ReduxAllMovies />
+            </TokenProtectedAllMovies>
+          }
+        />
+        <Route
+          path="/search/:title"
+          element={
+            <TokenProtectedSearch>
+              <ReduxSearchPage />
+            </TokenProtectedSearch>
+          }
+        />
+        <Route
+          path="/:id"
+          element={
+            <TokenProtectedDetail>
+              <ReduxDetailPage />
+            </TokenProtectedDetail>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

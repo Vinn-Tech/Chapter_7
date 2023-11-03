@@ -12,7 +12,6 @@ import {
   setToken,
   setUser,
 } from "../redux/reducers/auth/authLogin";
-// import { setTokenMe } from "../redux/reducers/meUser/authMe";
 
 const ReduxAllMovies = () => {
   const [Popular, setPopular] = useState([]);
@@ -64,12 +63,12 @@ const ReduxAllMovies = () => {
         </span>
       ) : (
         <>
-          <div className="parents bg-gradient-to-r from-gray-500 to-gray-700">
-            <div className="header-section flex justify-between w-full pt-[.5rem]">
+          <div>
+            <div className="header-section flex justify-between w-full px-[1rem] py-[.5rem]">
               <Link to={`/home`} className="brand-text">
-                <h1 className="font-black z-99 outline-red-600 tracking-wider font-poppins text-[2.5rem] text-red-600 ml-2">
-                  MovieList
-                </h1>
+                <h1 className="font-black outline-red-600 tracking-wider font-poppins text-[2.5rem] text-red-600">
+                MovieList
+              </h1>
               </Link>
               <div className="search-section w-[40%] flex justify-center items-center">
                 <div className="relative w-full">
@@ -97,7 +96,7 @@ const ReduxAllMovies = () => {
                     // dispatch(setTokenMe(""));
                     navigate("/");
                   }}
-                  className="bg-red-600 text-white py-0.5 px-1 font-normal text-[1rem] border-2 border-red-600 outline-red-600 rounded-full w-[6rem] h-[2.5rem]"
+                  className="bg-red-600 text-white font-normal text-[1rem] border-2 border-red-600 outline-red-600 rounded-full w-[6rem] h-[2.5rem]"
                 >
                   LogOut
                 </button>
@@ -124,7 +123,7 @@ const ReduxAllMovies = () => {
               </div>
             </div>
 
-            <div className="show-all-movies flex flex-wrap justify-between items-center gap-5 py-[1rem] px-[1.7rem]">
+            <div className="show-all-movies flex flex-wrap justify-between items-center gap-5 py-[1rem] px-[1.2rem]">
               {renderAll()}
             </div>
 

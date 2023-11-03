@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const RenderAllMovies = (props) => {
   return (
-   <div className="bg-slate-600 hover:scale-[105%] rounded-md">
+   <div className="bg-red-600 text-white hover:scale-[105%] rounded-md">
           <Link to={`/${props.allMovie.id}`}>
           <img className="poster-section min-h-[28rem] w-[17.5rem]" src={`https://image.tmdb.org/t/p/original/${props.allMovie.poster_path}`} alt="poster_path" />
           </Link>

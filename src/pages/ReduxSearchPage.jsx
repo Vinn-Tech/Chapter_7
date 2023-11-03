@@ -30,12 +30,22 @@ const ReduxSearchPage = () => {
   }, [searchData, loading]);
 
   return (
-    <div className="parents py-[1.2rem]">
+    <div>
       {loading ? (
         <h1>Sedang Memuat.....</h1>
       ) : (
-        <>
-          <span className="mx-6 font-extrabold font-montserrat">Search : {title}</span>
+        <div className="parents py-[1.2rem]">
+          <div className="flex px-[1.5rem] justify-between items-center">
+            <span className="font-extrabold text-[1.8rem] font-montserrat">
+              Search : "{title}"
+            </span>
+            <div className="flex justify-center items-center h-[100%] cursor-pointer">
+              <p className="text-red-600 font-normal font-montserrat hover:text-red-800">
+                See All Movie
+              </p>
+              <i className="fas fa-arrow-right text-red-600 ml-1 hover:text-red-800"></i>
+            </div>
+          </div>
           <div className="flex flex-wrap gap-4 mx-6 my-4">
             {SearchResult.map((movie) => {
               return (
@@ -51,7 +61,7 @@ const ReduxSearchPage = () => {
               );
             })}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

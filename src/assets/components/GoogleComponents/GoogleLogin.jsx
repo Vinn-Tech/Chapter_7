@@ -1,16 +1,15 @@
 import React from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
-// import { toast } from "react-toastify";
-// import { CookieKeys, CookieStorage } from "../../../utils/Cookies";
 import { useDispatch } from "react-redux";
-// import { setToken } from "../../../redux/reducers/auth/authlogin";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CookieKeys, CookieStorage } from "../../../utils/cookies";
 import { setToken } from "../../../redux/reducers/auth/authLogin";
+import { Button } from "react-bootstrap";
 import { setTokenOAuth } from "../../../redux/reducers/googleOAuth/authGoogle";
+import GoogleLogo from "../../img/google-logo.png";
 
-function GoogleLogin() {
+function GoogleLogin({buttonText}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -48,11 +47,11 @@ function GoogleLogin() {
   });
 
   return (
-    <div>
-      <button className=" text-black font-bold py-2 px-4" onClick={() => loginWithGoogle()}>
-        <button className="bg-red-500 gap-4 px-2 py-2 text-white flex items-center rounded-md">Continue with Google</button>
-      </button>
-    </div>
+     <div className="flex flex-row">
+          <button onClick={() => loginWithGoogle()} className="bg-white hover:bg-rose-400 rounded-md w-[13rem] h-[2.5rem] font-bold font-poppins tracking-wider focus:outline-none flex justify-center items-center">
+            {buttonText} <img src={GoogleLogo} alt="Google Logo" style={{ width: "24px", height: "24px", marginLeft: "10px" }}/>
+        </button>
+        </div>
   );
 }
 
