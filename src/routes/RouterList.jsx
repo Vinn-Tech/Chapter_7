@@ -10,13 +10,15 @@ import ReduxDashboard from "../pages/ReduxDashboard";
 import TokenProtectedSearch from "../assets/components/ProtectedComponents/TokenProtectedSearch";
 import TokenProtectedDetail from "../assets/components/ProtectedComponents/TokenProtectedDetail";
 import TokenProtectedAllMovies from "../assets/components/ProtectedComponents/TokenProtectedAllMovies";
+import Chapter7Dashboard from "../pages/Chapter7Dashboard";
 
 const RouterList = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Chapter7Dashboard />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route
           path="/home"
           element={
